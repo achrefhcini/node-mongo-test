@@ -17,10 +17,10 @@ MongoClient.connect('mongodb://localhost:27017/',
                 console.log(result);
             }) */
       //find one delete
-        /* db.collection('Todos').findOneAndDelete({completed:false})
-        .then((result)=>{
-            console.log(result)
-        }) */
+      /* db.collection('Todos').findOneAndDelete({completed:false})
+      .then((result)=>{
+          console.log(result)
+      }) */
 
      client.close(); 
 });
