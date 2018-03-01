@@ -41,7 +41,21 @@ app.get('/todos/:id',(req,res)=>{
         res.send({todo,code:200})
     })
 })
+// DELETE /todos/1920
+app.delete('/todos/:id',(req,res)=>{
+        var id = req.params.id
 
+    if(!ObjectID.isValid(id)){
+        return res.status(400).send()
+    }
+    Todo.findByIdAndRemove(id).then((result)=>{
+        if(!result){
+      return res.status(202).send({error:'cannt remove'})
+
+        }
+        res.send({result,code:200})
+    })
+})
 app.listen(3000,()=>{
     console.log('started on port 3000')
 })
